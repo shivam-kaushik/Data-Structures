@@ -1,16 +1,19 @@
-s = "abcabcbb"
+s = "dvdf"
 
-lst =[s[0]]
-tempLen = 1
-maxLen = 1
+lst = []
+tempLen = 0
+maxLen = 0
 
-for i in range(1, len(s)):
+for i in range(len(s)):
     if s[i] not in lst:
-        
         lst.append(s[i])
         tempLen+=1
     else:
-        tempLen = 1
+        while s[i] in lst:
+            lst.pop(0)
+            tempLen-=1
+        lst.append(s[i])
+        tempLen += 1
     if tempLen>maxLen:
         maxLen = tempLen
 
