@@ -12,4 +12,4 @@ class Solution:
         max_odd = max(odd_freq)
         min_even = min(even_freq)
         
-        return max_odd - min_even©leetcode
+        return max_odd - min_even
