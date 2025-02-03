@@ -30,3 +30,37 @@ class Trie:
                 return False
             node = node.children[char]
         return True
+
+
+
+
+class Trie:
+
+    def __init__(self):
+        self.root = {}
+
+    def insert(self, word: str) -> None:
+        cur = self.root
+        word += "*"
+        for char in word:
+            if char not in cur:
+                cur[char] = {}
+            cur = cur[char]
+        
+    def search(self, word: str) -> bool:
+        cur = self.root
+        word += "*"
+        for char in word:
+            if char not in cur:
+                return False
+            cur = cur[char]
+        return True
+        
+
+    def startsWith(self, prefix: str) -> bool:
+        cur = self.root
+        for char in prefix:
+            if char not in cur:
+                return False
+            cur = cur[char]
+        return True
